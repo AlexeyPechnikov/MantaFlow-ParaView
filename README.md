@@ -1,6 +1,6 @@
 # MantaFlow-ParaView
 
-Python wrappers to allow use MantaFlow output in ParaView and vice versa
+Python wrappers to load ParaView DEM output (.obj) in MantaFlow and to save MantaFlow output in ParaView format (.vtk)
 
 ## MantaFlow Installation
 
