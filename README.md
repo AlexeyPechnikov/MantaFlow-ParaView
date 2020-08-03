@@ -12,8 +12,10 @@ Note: MacOS Clang doesn't support OpenMP and so GCC 10 is required for multicore
 git clone https://bitbucket.org/mantaflow/manta.git
 mkdir manta/build
 cd manta/build
-cmake .. -DOPENMP=ON -DPYTHON_VERSION='3.7' -DNUMPY='ON' -D CMAKE_C_COMPILER=/usr/local/bin/gcc-10 -D CMAKE_CXX_COMPILER=/usr/local/bin/g++-10
-make -j4
+cmake .. -DOPENMP=ON -DPYTHON_VERSION='3.7' -DNUMPY='ON' \
+  -D CMAKE_C_COMPILER=/usr/local/bin/gcc-10 \
+  -D CMAKE_CXX_COMPILER=/usr/local/bin/g++-10
+make -j8
 ```
 
 ### Linux Ubuntu 18.04 with Python 3.6
@@ -28,7 +30,7 @@ git clone https://bitbucket.org/mantaflow/manta.git
 mkdir manta/build
 cd manta/build
 cmake .. -DOPENMP=ON -DPYTHON_VERSION='3.6' -DNUMPY='ON'
-make -j4
+make -j8
 ```
 
 
