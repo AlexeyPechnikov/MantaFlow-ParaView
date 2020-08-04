@@ -4,7 +4,7 @@ Python wrappers to load ParaView DEM output (.obj) in MantaFlow and to save Mant
 
 ## MantaFlow Installation
 
-### MacOS HomeBrew with Python 3.7 and GCC 10
+### MacOS HomeBrew with Python 3.7 and GCC 10 with GUI
 
 Note: MacOS Clang doesn't support OpenMP and so GCC 10 is required for multicore processing.
 
@@ -12,13 +12,13 @@ Note: MacOS Clang doesn't support OpenMP and so GCC 10 is required for multicore
 git clone https://bitbucket.org/mantaflow/manta.git
 mkdir manta/build
 cd manta/build
-cmake .. -DOPENMP=ON -DPYTHON_VERSION='3.7' -DNUMPY='ON' \
+cmake .. -DOPENMP=ON -DPYTHON_VERSION='3.7' -DNUMPY='ON' -DGUI=ON \
   -D CMAKE_C_COMPILER=/usr/local/bin/gcc-10 \
   -D CMAKE_CXX_COMPILER=/usr/local/bin/g++-10
 make -j8
 ```
 
-### Linux Ubuntu 18.04 with Python 3.6
+### Linux Ubuntu 18.04 with Python 3.6 without GUI
 
 ```
 apt-get update
@@ -33,7 +33,7 @@ cmake .. -DOPENMP=ON -DPYTHON_VERSION='3.6' -DNUMPY='ON'
 make -j8
 ```
 
-### reconstructScalarFlows Installation on AWS EC2 Ubuntu Server 18.04 LTS (HVM), SSD Volume Type
+### reconstructScalarFlows Installation on AWS EC2 (Ubuntu Server 18.04 LTS (HVM), SSD Volume Type) without GUI
 
 Note: some fixes added in my repository
 
