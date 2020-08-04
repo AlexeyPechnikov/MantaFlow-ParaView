@@ -33,6 +33,31 @@ cmake .. -DOPENMP=ON -DPYTHON_VERSION='3.6' -DNUMPY='ON'
 make -j8
 ```
 
+### reconstructScalarFlows Installation on AWS EC2 Ubuntu Server 18.04 LTS (HVM), SSD Volume Type
+
+Note: some fixes added in my repository
+
+```
+# Ubuntu Server 18.04 LTS (HVM), SSD Volume Type
+
+apt-get update
+apt-get -y install python3 python3-pip cmake
+pip3 install --upgrade numpy matplotlib
+
+cd /home/ubuntu/
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+#git clone https://bitbucket.org/marylen/reconstructscalarflows.git
+git clone https://github.com/mobigroup/reconstructScalarFlows.git
+cd reconstructScalarFlows
+
+mkdir build
+cd build
+cmake .. -DOPENMP=ON -DPYTHON_VERSION='3.6' -DNUMPY='ON'
+make -j8
+
+ln -s ../scenes/simpleplume.py .
+#rm -rf /home/eckert/results && mcedit simpleplume.py && ./manta simpleplume.py 0 100 1
+```
 
 # Examples
 
